@@ -17,4 +17,4 @@
 
 ## License
 
-[MIT License](https://raw.githubusercontent.com/internethealthreport/devops/master/LICENSE) Copyright (c) 2023 InternetHealthReport
+[MIT License](./LICENSE) Copyright (c) 2023 InternetHealthReport
