@@ -14,3 +14,7 @@
 ## Published Images
 
 1. [python](https://github.com/InternetHealthReport/devops/pkgs/container/python)
+
+## License
+
+[MIT License](https://raw.githubusercontent.com/internethealthreport/devops/master/LICENSE) Copyright (c) 2023 InternetHealthReport

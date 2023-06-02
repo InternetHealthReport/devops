@@ -26,9 +26,9 @@ Use a golden python image for all container work in IHR.
 
 **Purpose**:
 
-1. Allow running IHR on Rasperry Pi for hobbyists.
+1. Allow running IHR on Rasperry Pi for hobbyists. (arch: `linux/arm/v7`)
 
-2. Allow running IHR on ARM-based machines on AWS, which are cheaper.
+2. Allow running IHR on ARM-based machines on AWS, which are cheaper. (arch: `linux/arm64`)
 
 **Not Implemented Yet**
 
