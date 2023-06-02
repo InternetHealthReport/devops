@@ -9,3 +9,8 @@
 ## Documentation
 
    1. [Decision Record](./documentation/decision-record.md)
+
+
+## Published Images
+
+1. [python](https://github.com/InternetHealthReport/devops/pkgs/container/python)
