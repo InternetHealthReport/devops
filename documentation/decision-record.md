@@ -57,7 +57,7 @@ Use a golden python image for all container work in IHR.
 
 - To avoid this:
 
-    - [ ] push images to DockerHub as well to let u-sers pull from it directly, eg: 
+    - [x] push images to DockerHub as well to let u-sers pull from it directly, eg: 
 
     ```
     docker pull internethealthreport/python:3.8-ihr
