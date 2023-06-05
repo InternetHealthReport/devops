@@ -28,7 +28,7 @@ Use a golden python image for all container work in IHR.
 
 1. Allow running IHR on Rasperry Pi for hobbyists. (arch: `linux/arm/v7`)
 
-2. Allow running IHR on ARM-based machines on AWS, which are cheaper. (arch: `linux/arm64`)
+2. Allow running IHR on ARM-based machines on AWS, which are cheaper than intel machines. (arch: `linux/arm64`)
 
 **Not Implemented Yet**
 
@@ -47,9 +47,9 @@ Use a golden python image for all container work in IHR.
 
 - **Cons**:
     
-    - DockerHub is the default registry for all docker clients, all image pulls target it. If ghcr.io is used, users will have to either:
-        1. reconfigure their Docker client to pull from ghcr.io
-        2. or, specify full registry address when using IHR containers, eg: 
+    - DockerHub is the default registry for all docker clients, all image pulls target it. If ghcr.io is used, users will have to:
+        1. login to ghcr.io locally `docker login ghcr.io`
+        2. specify full registry address when using IHR containers, eg: 
     
     ```
     docker pull ghcr.io/internethealthreport/python:3.8-ihr
