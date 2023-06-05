@@ -43,4 +43,5 @@ jobs:
                 build-args:
                   PYTHON_VERSION=${{ matrix.python-version }}
                 tags: |
-                    ghcr.io/${{ env.OWNER_LC }}/python:${{ matrix.python-version }}-ihr
+                  ${{ env.OWNER_LC }}/python:${{ matrix.PYTHON_VERSION }}-ihr
+                  ghcr.io/${{ env.OWNER_LC }}/python:${{ matrix.python-version }}-ihr
