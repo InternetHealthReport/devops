@@ -1,9 +1,0 @@
-ARG IMAGE_VERSION="slim-buster"
-ARG PYTHON_VERSION="3.8"
-
-FROM python:${PYTHON_VERSION}-${IMAGE_VERSION} AS python
-
-LABEL "org.name"="InternetHealthReport" \
-      "org.website"="https://ihr.iijlab.net/ihr/en-us/" \
-      "org.email"="admin@ihr.live" \
-      "org.description"="Base Python image used by all IHR published images"
