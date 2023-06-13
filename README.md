@@ -1,4 +1,5 @@
-<h2 align="center"><b>IHR Devops</b></h2>
+<p align="center"><img src="https://avatars.githubusercontent.com/u/40665700?s=200&v=4" height="150"></p>
+<h1 align="center">Internet Health Report Devops</h1>
 
 <h3 align="center">Complete documentation and tooling for running IHR in production</h3>
 
