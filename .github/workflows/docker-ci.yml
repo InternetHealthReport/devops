@@ -27,7 +27,7 @@ jobs:
               uses: docker/build-push-action@v4
               with:
                 context: .
-                file: Dockerfile.python
+                file: Dockerfile
                 push: true
                 build-args:
                   PYTHON_VERSION=${{ matrix.python-version }}
