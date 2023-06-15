@@ -26,3 +26,7 @@ RUN addgroup --system --gid ${GID:-1000} ihr \
     && adduser --system --ingroup ihr --uid ${UID:-1000} ihr
 
 USER ihr:ihr
+
+WORKDIR /app
+
+ENTRYPOINT ["python"]
