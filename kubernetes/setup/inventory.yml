@@ -1,0 +1,38 @@
+all:
+  vars:
+    ansible_ssh_user: romain
+    ansible_ssh_private_key_file: ~/.ssh/id_rsa
+  hosts:
+    kafka1:
+      ansible_host: '10.0.1.12'
+    kafka2:
+      ansible_host: '10.0.1.13'
+    kafka3:
+      ansible_host: '10.0.1.14'
+    kafka5:
+      ansible_host: '10.0.1.33'
+    kafka6:
+      ansible_host: '10.0.1.34'
+  children:
+    kube_control_plane:
+      hosts:
+        kafka1:
+        kafka2:
+    kube_node:
+      hosts:
+        kafka1:
+        kafka2:
+        kafka3:
+        kafka5:
+        kafka6:
+    etcd:
+      hosts:
+        kafka1:
+        kafka2:
+        kafka3:
+    k8s_cluster:
+      children:
+        kube_control_plane:
+        kube_node:
+    calico_rr:
+      hosts: {}

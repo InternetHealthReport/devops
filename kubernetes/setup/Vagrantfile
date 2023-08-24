@@ -1,0 +1,29 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "hashicorp/bionic64"
+  config.vm.box_check_update = false
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.ssh.insert_key = false
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "350"
+    vb.linked_clone = true
+  end
+
+  config.vm.define "k3s-master" do |node|
+    node.vm.hostname = "k3s-master"
+    node.vm.network "private_network", ip: "192.168.60.4"
+  end
+
+  config.vm.define "k3s-replica-1" do |node|
+    node.vm.hostname = "k3s-replica-1"
+    node.vm.network "private_network", ip: "192.168.60.5"
+  end
+
+  config.vm.define "k3s-replica-2" do |node|
+    node.vm.hostname = "k3s-replica-2"
+    node.vm.network "private_network", ip: "192.168.60.6"
+  end
+end
