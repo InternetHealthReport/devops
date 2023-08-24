@@ -7,6 +7,10 @@
 ## Requirements
 
 - [Kubespray](https://github.com/kubernetes-sigs/kubespray)
+- it should be pulled with
+```
+git submodule update --init --recursive
+```
 
 ## Resources
 
