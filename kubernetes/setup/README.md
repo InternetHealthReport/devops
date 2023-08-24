@@ -76,3 +76,5 @@ kubectl get all
 cd kubespray
 ansible-playbook -i ../inventory.yml --user=vagrant --become --become-user=root reset.yml
 ```
+
+See kubespray to remove/add nodes: https://github.com/kubernetes-sigs/kubespray/blob/master/docs/nodes.md
