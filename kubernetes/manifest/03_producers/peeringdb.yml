@@ -21,14 +21,14 @@ spec:
                 configMapKeyRef:
                   name: kafka-config
                   key: bootstrap_servers
-            resources:
-              requests:
-                cpu: "500m"
-                memory: "100Mi"
-              limits:
-                cpu: "1"
-                memory: "200Mi"
-          restartPolicy: OnFailure
+                  # resources:
+                  #   requests:
+                  #     cpu: "500m"
+                  #     memory: "100Mi"
+                  #   limits:
+                  #     cpu: "1"
+                  #     memory: "200Mi"
+          restartPolicy: Never
 ---
 apiVersion: batch/v1
 kind: CronJob
@@ -53,11 +53,11 @@ spec:
                 configMapKeyRef:
                   name: kafka-config
                   key: bootstrap_servers
-            resources:
-              requests:
-                cpu: "500m"
-                memory: "100Mi"
-              limits:
-                cpu: "1"
-                memory: "200Mi"
-          restartPolicy: OnFailure
+                  # resources:
+                  #   requests:
+                  #     cpu: "500m"
+                  #     memory: "100Mi"
+                  #   limits:
+                  #     cpu: "1"
+                  #     memory: "200Mi"
+          restartPolicy: Never
