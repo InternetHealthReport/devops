@@ -1,0 +1,31 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc00-collector
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "0 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc00-collector-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc00"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+            resources:
+              requests:
+                cpu: "500m"
+                memory: "100Mi"
+              limits:
+                cpu: "1"
+                memory: "200Mi"
+          restartPolicy: OnFailure

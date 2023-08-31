@@ -1,0 +1,63 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ix
+  labels:
+    type: producer
+    type_name: peeringdb
+spec:
+  schedule: "0 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: ix-container
+            image: internethealthreport/peeringdb
+            args: ["ix.py"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+            resources:
+              requests:
+                cpu: "500m"
+                memory: "100Mi"
+              limits:
+                cpu: "1"
+                memory: "200Mi"
+          restartPolicy: OnFailure
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: netixlan
+  labels:
+    type: producer
+    type_name: peeringdb
+spec:
+  schedule: "0 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: netixlan-container
+            image: internethealthreport/peeringdb
+            args: ["netixlan.py"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+            resources:
+              requests:
+                cpu: "500m"
+                memory: "100Mi"
+              limits:
+                cpu: "1"
+                memory: "200Mi"
+          restartPolicy: OnFailure
