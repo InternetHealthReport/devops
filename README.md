@@ -2,7 +2,7 @@
 <h1 align="center">Internet Health Report Devops</h1>
 
 <h3 align="center">Complete documentation and tooling for running IHR in production</h3>
-Work done during [GSoC'23](https://summerofcode.withgoogle.com/programs/2023/organizations/internet-health-report).
+Work done during GSoC'23: https://summerofcode.withgoogle.com/programs/2023/organizations/internet-health-report
 
 ---
 
