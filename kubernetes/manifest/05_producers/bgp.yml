@@ -1,0 +1,725 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc00-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc00-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc00"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc01-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc01-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc01"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc04-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc04-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc04"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc06-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc06-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc06"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc10-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc10-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc10"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc11-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc11-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc11"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc13-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc13-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc13"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc14-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc14-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc14"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc15-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc15-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc15"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc16-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc16-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc16"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc20-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc20-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc20"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc23-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc23-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc23"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc24-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc24-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc24"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc25-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc25-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc25"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc26-updates
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "*/15 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc26-updates-container
+            image: internethealthreport/bgp
+            args: ["-t", "updates", "--collector", "rrc26"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc00-rib
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "29 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc00-rib-container
+            image: internethealthreport/bgp
+            args: ["-t", "ribs", "--collector", "rrc00"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc01-rib
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "23 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc01-rib-container
+            image: internethealthreport/bgp
+            args: ["-t", "ribs", "--collector", "rrc01"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc04-rib
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "24 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc04-rib-container
+            image: internethealthreport/bgp
+            args: ["-t", "ribs", "--collector", "rrc04"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc06-rib
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "21 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc06-rib-container
+            image: internethealthreport/bgp
+            args: ["-t", "ribs", "--collector", "rrc06"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc10-rib
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "25 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc10-rib-container
+            image: internethealthreport/bgp
+            args: ["-t", "ribs", "--collector", "rrc10"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc11-rib
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "26 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc11-rib-container
+            image: internethealthreport/bgp
+            args: ["-t", "ribs", "--collector", "rrc11"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc13-rib
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "27 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc13-rib-container
+            image: internethealthreport/bgp
+            args: ["-t", "ribs", "--collector", "rrc13"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc15-rib
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "28 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc15-rib-container
+            image: internethealthreport/bgp
+            args: ["-t", "ribs", "--collector", "rrc15"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc16-rib
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "25 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc16-rib-container
+            image: internethealthreport/bgp
+            args: ["-t", "ribs", "--collector", "rrc16"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc20-rib
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "26 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc20-rib-container
+            image: internethealthreport/bgp
+            args: ["-t", "ribs", "--collector", "rrc20"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc23-rib
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "23 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc23-rib-container
+            image: internethealthreport/bgp
+            args: ["-t", "ribs", "--collector", "rrc23"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc24-rib
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "27 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc24-rib-container
+            image: internethealthreport/bgp
+            args: ["-t", "ribs", "--collector", "rrc24"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc25-rib
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "27 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc25-rib-container
+            image: internethealthreport/bgp
+            args: ["-t", "ribs", "--collector", "rrc25"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: rrc26-rib
+  labels:
+    type: producer
+    type_name: bgp
+spec:
+  schedule: "28 0 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: rrc26-rib-container
+            image: internethealthreport/bgp
+            args: ["-t", "ribs", "--collector", "rrc26"]
+            env:
+            - name: KAFKA_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: kafka-config
+                  key: bootstrap_servers
+          restartPolicy: Never
+---
