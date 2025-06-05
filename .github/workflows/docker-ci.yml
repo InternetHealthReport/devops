@@ -11,7 +11,14 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
           matrix:
-            python-version: [3.6, 3.8]
+            python-version: [3.6, 3.8, 3.12]
+            include:
+              - python-version: 3.6
+                image-version: slim-buster
+              - python-version: 3.8
+                image-version: slim-buster
+              - python-version: 3.12
+                image-version: slim-bookworm
         steps:
             - name: Checkout code
               uses: actions/checkout@v3
@@ -29,7 +36,8 @@ jobs:
                 context: .
                 file: Dockerfile
                 push: true
-                build-args:
+                build-args: |
                   PYTHON_VERSION=${{ matrix.python-version }}
+                  IMAGE_VERSION=${{ matrix.image-version }}
                 tags: |
                   ${{ secrets.DOCKERHUB_USERNAME }}/python:${{ matrix.python-version }}-ihr
