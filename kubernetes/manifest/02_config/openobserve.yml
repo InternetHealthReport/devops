@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: openobserve-config
+data:
+  email: romain@ihr.org
+  password: rootroot
