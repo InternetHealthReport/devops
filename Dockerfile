@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
-ARG IMAGE_VERSION="slim-buster"
-ARG PYTHON_VERSION="3.8"
+ARG IMAGE_VERSION="slim-bookworm"
+ARG PYTHON_VERSION="3.13"
 
 FROM python:${PYTHON_VERSION}-${IMAGE_VERSION} AS python
 
