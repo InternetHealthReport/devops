@@ -23,7 +23,7 @@ ENV UID=1000 GID=1000
 # - in IHR images use: USER ihr:ihr, 
 # - user & group ids are 1000 for compatibility in dev contaienrs
 RUN addgroup --system --gid ${GID:-1000} ihr \
-    && adduser --system --ingroup ihr --uid ${UID:-1000} ihr
+    && adduser --system --ingroup ihr --home /home/ihr --uid ${UID:-1000} ihr
 
 USER ihr:ihr
 
